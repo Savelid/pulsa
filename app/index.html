@@ -55,6 +55,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        in this file. All other imports should go in elements.html -->
   <link rel="import" href="elements/elements.html">
 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+
+  <!-- Import the custome theme -->
+  <link rel="import" href="styles/la-resistance.html">
+
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
 </head>
@@ -63,7 +69,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <span id="browser-sync-binding"></span>
   <template is="dom-bind" id="app">
 
-    <paper-drawer-panel id="paperDrawerPanel">
+    <paper-drawer-panel id="paperDrawerPanel" force-narrow>
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
 
@@ -74,108 +80,167 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Drawer Content -->
         <paper-menu attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="home" href="{{baseUrl}}">
+          <a data-route="home" href="#home">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
           </a>
 
-          <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+          <a data-route="kunskap" href="#kunskap">
+            <iron-icon icon="social:school"></iron-icon>
+            <span>Våra Kunskapsområden</span>
           </a>
 
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
+          <a data-route="kunder" href="#kunder">
+            <iron-icon icon="business-center"></iron-icon>
+            <span>Våra Kunder</span>
+          </a>
+
+          <a data-route="konsulter" href="#konsulter">
+            <iron-icon icon="business-center"></iron-icon>
+            <span>Våra Konsulter</span>
           </a>
         </paper-menu>
       </paper-scroll-header-panel>
 
       <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+      <paper-scroll-header-panel main id="headerPanelMain" fixed>
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
+        <paper-toolbar id="mainToolbar">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+
+          <div class="app-name">
+            <a data-route="home" href="#home">
+              Pulsa Utveckling AB
+            </a>
+          </div>
 
           <span class="space"></span>
 
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
-          <!-- Application name -->
-          <div class="middle middle-container">
-            <div class="app-name">Polymer Starter Kit</div>
+          <div class="app-name">
+            <a data-route="kontakter" href="#kontakter">
+              Kontakta oss
+            </a>
           </div>
 
-          <!-- Application sub title -->
-          <div class="bottom bottom-container">
-            <div class="bottom-title">The future of the web today</div>
-          </div>
         </paper-toolbar>
 
         <!-- Main Content -->
         <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
-            <section data-route="home">
-              <paper-material elevation="1">
-                <my-greeting></my-greeting>
 
-                <p class="subhead">You now have:</p>
-                <my-list></my-list>
+            <section hero id="home">
+              <div class="row">
+                <div class="col-md-6">
+                  <iron-image src="images/pulsa.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
+                </div>
+                <div class="col-md-6 my-normal-text">
+                  <h1>En bra rubrik här</h1>
+                  <p>Lite beskrivande text som snabbt beskriver vad pulsa är, gör och kan erbjuda. Kanske två till fem rader lång.</p>
+                </div>
+              </div>
+            </section>
+            <section>
+              <div class="row">
+                <div class="col-sm-4">
+                  <a data-route="kunskap" href="#kunskap" style="text-decoration:none;">
+                    <paper-material elevation="1">
+                      <h3>Våra Kunskapsområden</h3>
+                      <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                    </paper-material>
+                  </a>
+                </div>
+                <div class="col-sm-4">
+                  <paper-material elevation="1">
+                    <h3>Våra Kunder</h3>
+                    <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                  </paper-material>
+                </div>
+                <div class="col-sm-4">
+                  <paper-material elevation="1">
+                    <h3>Våra Konsulter</h3>
+                    <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                  </paper-material>
+                </div>
+              </div>
+            </section>
 
-                <p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
-              </paper-material>
+            <section hero id="kunskap">
+              <div class="row">
+                <div class="col-md-6">
+                  <iron-image src="https://pixabay.com/static/uploads/photo/2014/04/02/14/07/book-306211_960_720.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
+                </div>
+                <div class="col-md-6 my-normal-text">
+                  <h1>En rubrik till denna sektion</h1>
+                  <p>Några floskler om kunskap. Kanske en till tre rader lång.</p>
+                </div>
+              </div>
+            </section>
 
-              <paper-material elevation="1">
-                <p>This is another card.</p>
-              </paper-material>
-
-              <paper-material elevation="1">
-                <h1 id="license">License</h1>
-                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+            <section>
+              <div class="my-normal-text my-padding">
+                <p>Mer handfasta exempel.</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                 <ul>
-                <li>Redistributions of source code must retain the above copyright
-                notice, this list of conditions and the following disclaimer.</li>
-                <li>Redistributions in binary form must reproduce the above
-                copyright notice, this list of conditions and the following disclaimer
-                in the documentation and/or other materials provided with the
-                distribution.</li>
-                <li>Neither the name of Google Inc. nor the names of its
-                contributors may be used to endorse or promote products derived from
-                this software without specific prior written permission.</li>
+                  <li>Something</li>
+                  <li>Something else</li>
+                  <li>Something else</li>
                 </ul>
-                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-              </paper-material>
+              </div>
             </section>
 
-            <section data-route="users">
-              <paper-material elevation="1">
-                <h2 class="page-title">Users</h2>
-                <p>This is the users section</p>
-                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                <a href$="{{baseUrl}}users/Sam">Sam</a>
-              </paper-material>
+            <section hero id="kunder">
+              <div class="row">
+                <div class="col-md-6">
+                  <iron-image src="http://www.motekrevision.se/static/files/1/ikon-kunder.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
+                </div>
+                <div class="col-md-6 my-normal-text">
+                  <h1>En rubrik till denna sektion</h1>
+                  <p>Lite om kundrelationer eller nått. Kanske en till tre rader lång.</p>
+                </div>
+              </div>
             </section>
 
-            <section data-route="user-info">
-              <paper-material elevation="1">
-                <h2 class="page-title">User: {{params.name}}</h2>
-                <div>This is {{params.name}}'s section</div>
-              </paper-material>
+            <section>
+              <div class="my-normal-text my-padding">
+                <p>Mer handfasta exempel.</p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <ul>
+                  <li>Something</li>
+                  <li>Something else</li>
+                  <li>Something else</li>
+                </ul>
+              </div>
             </section>
 
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <h2 class="page-title">Contact</h2>
-                <p>This is the contact section</p>
-              </paper-material>
+            <section hero id="konsulter">
+              <div class="row">
+                <div class="col-md-6">
+                  <iron-image src="https://www.efficientwaterme.com/wp-content/uploads/2015/09/12198090531909861341man-silhouette.svg_.hi_.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
+                </div>
+                <div class="col-md-6 my-normal-text">
+                  <h1>En rubrik till denna sektion</h1>
+                  <p>Lite övergripande om vad vi strävar mot eller nått annat trams. Kanske en till tre rader lång.</p>
+                </div>
+              </div>
             </section>
-          </iron-pages>
+
+            <section>
+              <div class="my-normal-text my-padding">
+                <p>Våra konsulter</p>
+              </div>
+            </section>
+
+            <footer id="kontakter">
+              <h3>Kontaktuppgifter</h3>
+              <ul>
+                <li>Pulsa Utveckling AB</li>
+                <li>John Savelid</li>
+                <li>070 53 53 630</li>
+                <li>Munkhagsgatan 120B</li>
+                <li>XXXXX Linköping</li>
+              </ul>
+
+            </footer>
+
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>

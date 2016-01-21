@@ -40,13 +40,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /* Components */
 
     /* paper-drawer-panel */
-    --drawer-menu-color: #ffffff;
+
     --drawer-border-color: 1px solid #ccc;
     --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
 
     /* paper-menu */
-    --paper-menu-background-color: #fff;
+    --paper-menu-background-color: #0ff;
     --menu-link-color: #111111;
+
+    --paper-card-background-color: #d7dcdf;
   }
 
   /* General styles */
@@ -72,6 +74,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   paper-scroll-header-panel {
     height: 100%;
+  }
+
+  paper-card {
+    width: 100%;
   }
 
   paper-menu {
@@ -157,7 +163,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     padding: 16px 0 16px 0;
     width: calc(98.66% - 16px);
     margin: 16px auto;
-    background: white;
   }
 
   #toast .toast-hide-button {
@@ -172,11 +177,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     #drawer .paper-toolbar {
       margin-left: 16px;
-    }
-
-    #mainToolbar.tall .app-name {
-      font-size: 24px;
-      font-weight: 400;
     }
 
     paper-material {
@@ -195,15 +195,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border-right: 1px solid rgba(0, 0, 0, 0.14);
     }
 
-    iron-pages {
-      padding: 48px 62px;
-    }
-
     paper-material {
       width: calc(98% - 46px);
       margin-bottom: 32px;
       padding-left: 30px;
       padding-right: 30px;
+      background:  #d7dcdf;
     }
 
   }
