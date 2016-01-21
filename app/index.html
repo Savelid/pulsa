@@ -71,7 +71,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-drawer-panel id="paperDrawerPanel" force-narrow>
       <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel drawer fixed>
+      <paper-header-panel drawer mode="seamed">
 
         <!-- Drawer Toolbar -->
         <paper-toolbar id="drawerToolbar">
@@ -79,37 +79,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </paper-toolbar>
 
         <!-- Drawer Content -->
-        <paper-menu attr-for-selected="data-route" selected="[[route]]">
-          <a data-route="home" href="#home">
+        <paper-menu>
+          <a href="#home">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
           </a>
 
-          <a data-route="kunskap" href="#kunskap">
+          <a href="#kunskap">
             <iron-icon icon="social:school"></iron-icon>
             <span>Våra Kunskapsområden</span>
           </a>
 
-          <a data-route="kunder" href="#kunder">
+          <a href="#kunder">
             <iron-icon icon="business-center"></iron-icon>
             <span>Våra Kunder</span>
           </a>
 
-          <a data-route="konsulter" href="#konsulter">
+          <a href="#konsulter">
             <iron-icon icon="business-center"></iron-icon>
             <span>Våra Konsulter</span>
           </a>
         </paper-menu>
-      </paper-scroll-header-panel>
+      </paper-header-panel>
 
       <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" fixed>
+      <paper-header-panel main id="headerPanelMain" mode="waterfall">
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
 
           <div class="app-name">
-            <a data-route="home" href="#home">
+            <a href="#home">
               Pulsa Utveckling AB
             </a>
           </div>
@@ -117,7 +117,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <span class="space"></span>
 
           <div class="app-name">
-            <a data-route="kontakter" href="#kontakter">
+            <a href="#kontakter">
               Kontakta oss
             </a>
           </div>
@@ -132,7 +132,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="col-md-6">
                   <iron-image src="images/pulsa.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
                 </div>
-                <div class="col-md-6 my-normal-text">
+                <div class="col-md-6 my-hero-text">
                   <h1>En bra rubrik här</h1>
                   <p>Lite beskrivande text som snabbt beskriver vad pulsa är, gör och kan erbjuda. Kanske två till fem rader lång.</p>
                 </div>
@@ -141,24 +141,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section>
               <div class="row">
                 <div class="col-sm-4">
-                  <a data-route="kunskap" href="#kunskap" style="text-decoration:none;">
-                    <paper-material elevation="1">
-                      <h3>Våra Kunskapsområden</h3>
+                  <a href="#kunskap">
+                    <paper-button raised class="my-super-large-button">
+                      <h3>Våra kunskapsområden</h3>
                       <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
-                    </paper-material>
+                    </paper-button>
                   </a>
                 </div>
                 <div class="col-sm-4">
-                  <paper-material elevation="1">
-                    <h3>Våra Kunder</h3>
-                    <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
-                  </paper-material>
+                  <ahref="#kunder">
+                    <paper-button raised class="my-super-large-button">
+                      <h3>Våra kunder</h3>
+                      <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                    </paper-button>
+                  </a>
                 </div>
                 <div class="col-sm-4">
-                  <paper-material elevation="1">
-                    <h3>Våra Konsulter</h3>
-                    <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
-                  </paper-material>
+                  <a href="#konsulter">
+                    <paper-button raised class="my-super-large-button">
+                      <h3>Våra konsulter</h3>
+                      <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                    </paper-button>
+                  </a>
                 </div>
               </div>
             </section>
@@ -168,7 +172,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="col-md-6">
                   <iron-image src="https://pixabay.com/static/uploads/photo/2014/04/02/14/07/book-306211_960_720.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
                 </div>
-                <div class="col-md-6 my-normal-text">
+                <div class="col-md-6 my-hero-text">
                   <h1>En rubrik till denna sektion</h1>
                   <p>Några floskler om kunskap. Kanske en till tre rader lång.</p>
                 </div>
@@ -192,7 +196,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="col-md-6">
                   <iron-image src="http://www.motekrevision.se/static/files/1/ikon-kunder.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
                 </div>
-                <div class="col-md-6 my-normal-text">
+                <div class="col-md-6 my-hero-text">
                   <h1>En rubrik till denna sektion</h1>
                   <p>Lite om kundrelationer eller nått. Kanske en till tre rader lång.</p>
                 </div>
@@ -216,7 +220,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="col-md-6">
                   <iron-image src="https://www.efficientwaterme.com/wp-content/uploads/2015/09/12198090531909861341man-silhouette.svg_.hi_.png" style="margin: 0px auto; width:100%; height:250px;" sizing="contain"></iron-image>
                 </div>
-                <div class="col-md-6 my-normal-text">
+                <div class="col-md-6 my-hero-text">
                   <h1>En rubrik till denna sektion</h1>
                   <p>Lite övergripande om vad vi strävar mot eller nått annat trams. Kanske en till tre rader lång.</p>
                 </div>
@@ -224,8 +228,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </section>
 
             <section>
-              <div class="my-normal-text my-padding">
-                <p>Våra konsulter</p>
+              <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <paper-material elevation="0">
+                      <iron-image src="https://www.efficientwaterme.com/wp-content/uploads/2015/09/12198090531909861341man-silhouette.svg_.hi_.png" class="my-profil-image"></iron-image>
+                      <h3>John Savelid</h3>
+                      <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                    </paper-material>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <paper-material elevation="0">
+                      <iron-image src="https://www.efficientwaterme.com/wp-content/uploads/2015/09/12198090531909861341man-silhouette.svg_.hi_.png" class="my-profil-image"></iron-image>
+                      <h3>Robin Savelid</h3>
+                      <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                    </paper-material>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <paper-material elevation="0">
+                      <iron-image src="https://www.efficientwaterme.com/wp-content/uploads/2015/09/12198090531909861341man-silhouette.svg_.hi_.png" class="my-profil-image"></iron-image>
+                      <h3>Carl-Johan Någonting</h3>
+                      <p>En liten säljande text om detta ämne här. Kanske två till fem rader.</p>
+                    </paper-material>
+                </div>
               </div>
             </section>
 
@@ -242,7 +266,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </footer>
 
         </div>
-      </paper-scroll-header-panel>
+      </paper-header-panel>
     </paper-drawer-panel>
 
     <paper-toast id="toast">

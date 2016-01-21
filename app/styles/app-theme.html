@@ -72,7 +72,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     @apply(--paper-font-title);
   }
 
-  paper-scroll-header-panel {
+  paper-header-panel {
     height: 100%;
   }
 
@@ -110,11 +110,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     min-height: 48px;
     padding: 0 16px;
   }
+  .my-normal-text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+  .my-hero-text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+  }
+  .my-padding{
+    padding: 40px;
+  }
+  .my-super-large-button {
+    box-sizing: border-box;
+    background-color: #d7dcdf;
+    text-transform: none;
+    margin: 12px 24px 32px 24px;
+    padding: 16px 30px;
+    width: calc(98% - 46px);
+    text-align: left;
+  }
+  .my-super-large-button h3 {
+    text-transform: capitalize;
+  }
+  .my-hero-text p,
+  .my-hero-text h1,
+  .my-hero-text h2 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .my-profil-image {
+    width: 100%;
+    --iron-image-width: 100%;
+  }
+  @media (min-width: 768px) {
+
+  }
+  @media (min-width: 992px) {
+    .my-hero-text{
+      text-align: left;
+    }
+    .my-hero-text p,
+    .my-hero-text h1,
+    .my-hero-text h2 {
+      padding-left: 0px;
+      padding-right: 24px;
+    }
+  }
 
   #mainToolbar.tall .app-name {
     font-size: 40px;
     font-weight: 300;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+    /* Required for main area's paper-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
   }
@@ -139,7 +189,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     @apply(--paper-font-subhead);
 
     margin-left: 48px;
-    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+    /* Required for main area's paper-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
   }
@@ -160,7 +210,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   paper-material {
     border-radius: 2px;
     height: 100%;
-    padding: 16px 0 16px 0;
     width: calc(98.66% - 16px);
     margin: 16px auto;
   }
@@ -198,9 +247,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     paper-material {
       width: calc(98% - 46px);
       margin-bottom: 32px;
-      padding-left: 30px;
-      padding-right: 30px;
-      background:  #d7dcdf;
     }
 
   }
